@@ -47,7 +47,7 @@ For example:
 
 This can be used to enqueue stylesheets like this:
 
-````
+```
 <?php
 
 $asset_data = require(__DIR__ . '/build/style.asset.php');
