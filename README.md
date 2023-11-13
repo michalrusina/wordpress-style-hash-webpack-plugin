@@ -21,11 +21,11 @@ Use this plugin as you would other webpack plugins:
 
 ```js
 // webpack.config.js
-const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin');
+const WordpressStyleHashWebpackPlugin = require('wordpress-style-hash-webpack-plugin');
 
 module.exports = {
 	// ...
-	plugins: [new DependencyExtractionWebpackPlugin()],
+	plugins: [new WordpressStyleHashWebpack Plugin()],
 };
 ```
 

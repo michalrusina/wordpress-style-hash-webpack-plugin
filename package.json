@@ -1,6 +1,6 @@
 {
 	"name": "wordpress-style-hash-webpack-plugin",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Create content hashes for CSS files in WordPress repositories bundled by Webpack.",
 	"author": {
 		"name": "Michal Rusina",
