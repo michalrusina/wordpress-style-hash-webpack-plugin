@@ -25,7 +25,7 @@ const WordpressStyleHashWebpackPlugin = require('wordpress-style-hash-webpack-pl
 
 module.exports = {
 	// ...
-	plugins: [new WordpressStyleHashWebpack Plugin()],
+	plugins: [new WordpressStyleHashWebpackPlugin()],
 };
 ```
 
@@ -33,11 +33,11 @@ Each CSS entry point in the webpack bundle will include an asset file that conta
 
 For example:
 
-```
+```css
 // Source file style.css
 .foo:after { content: 'bar'; }
 
-// Webpack will produce the output build/style.css
+// Webpack will produce the output build/style.dd4c2dc50d046ed9d4c063a7ca95702f.css
 .foo:after { content: 'bar'; }
 
 // Webpack will also produce build/style.asset.php containing file version
@@ -47,7 +47,7 @@ For example:
 
 This can be used to enqueue stylesheets like this:
 
-```
+```php
 <?php
 
 $asset_data = require(__DIR__ . '/build/style.asset.php');
@@ -68,4 +68,13 @@ wp_enqueue_style('style_handle');
 
 #### Options
 
-No options at this moment.
+The plugin can be configured with an options object:
+
+```js
+new WordpressStyleHashWebpackPlugin({
+    addHash: true,
+});
+```
+
+- `addHash` (`boolean`, default: `true`)
+When false, the hash will not be added to the output filename, and will be set to `null` in `*.asset.php`. This can be useful if you prefer to manage the filename without the hash or when using [BrowserSync](https://browsersync.io/) with CSS injection.
